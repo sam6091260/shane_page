@@ -1,26 +1,24 @@
-import finger from "./assets/detail/point_right.png";
-import back from "./assets/detail/back_page.png";
-import fangzui from "../src/assets/fengzui.jpg";
-import fangzui2 from "../src/assets/fengzui2.jpg";
-import fangzui3 from "../src/assets/detail/fangzui1.jpg";
-import fangzui4 from "../src/assets/detail/fangzui2.jpg";
-import fangzui5 from "../src/assets/detail/fangzui3.jpg";
-import fangzui6 from "../src/assets/detail/fangzui4.jpg";
-import "./styles/Detail.css";
+import finger from "../assets/detail/point_right.png";
+import back from "../assets/detail/back_page.png";
+import fangzui from "../assets/fengzui.jpg";
+import fangzui2 from "../assets/fengzui2.jpg";
+import fangzui3 from "../assets/detail/fangzui1.jpg";
+import fangzui4 from "../assets/detail/fangzui2.jpg";
+import fangzui5 from "../assets/detail/fangzui3.jpg";
+import fangzui6 from "../assets/detail/fangzui4.jpg";
+import "../styles/Detail.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos"; // 导入 AOS 库
-import "aos/dist/aos.css"; // 导入 AOS 的 CSS 样式
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function DetailFangZui() {
   useEffect(() => {
-    // 进入Detail页面后，滚动到页面顶部
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    // 在页面加载后初始化 AOS 库
     AOS.init();
-  }, []); // 空数组表示只在组件加载时运行一次
+  }, []);
 
   return (
     <>

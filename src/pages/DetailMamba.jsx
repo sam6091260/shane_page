@@ -1,24 +1,22 @@
-import finger from "./assets/detail/point_right.png";
-import back from "./assets/detail/back_page.png";
-import mamba from "../src/assets/mamba.png";
-import mamba1 from "../src/assets/detail/mamba1.jpg";
-import mamba2 from "../src/assets/detail/mamba2.jpg";
-import mamba3 from "../src/assets/detail/mamba3.jpg";
-import "./styles/Detail.css";
+import finger from "../assets/detail/point_right.png";
+import back from "../assets/detail/back_page.png";
+import mamba from "../assets/mamba.png";
+import mamba1 from "../assets/detail/mamba1.jpg";
+import mamba2 from "../assets/detail/mamba2.jpg";
+import mamba3 from "../assets/detail/mamba3.jpg";
+import "../styles/Detail.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos"; // 导入 AOS 库
-import "aos/dist/aos.css"; // 导入 AOS 的 CSS 样式
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function DetailMamba() {
   useEffect(() => {
-    // 进入Detail页面后，滚动到页面顶部
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    // 在页面加载后初始化 AOS 库
     AOS.init();
-  }, []); // 空数组表示只在组件加载时运行一次
+  }, []);
 
   return (
     <>

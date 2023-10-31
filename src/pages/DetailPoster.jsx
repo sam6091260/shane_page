@@ -1,23 +1,21 @@
-import finger from "./assets/detail/point_right.png";
-import back from "./assets/detail/back_page.png";
-import post from "../src/assets/post.png";
-import postOne from "../src/assets/detail/poster1.jpg";
-import postTwo from "../src/assets/detail/poster2.jpg";
-import "./styles/Detail.css";
+import finger from "../assets/detail/point_right.png";
+import back from "../assets/detail/back_page.png";
+import post from "../assets/post.png";
+import postOne from "../assets/detail/poster1.jpg";
+import postTwo from "../assets/detail/poster2.jpg";
+import "../styles/Detail.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos"; // 导入 AOS 库
-import "aos/dist/aos.css"; // 导入 AOS 的 CSS 样式
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function DetailPoster() {
   useEffect(() => {
-    // 进入Detail页面后，滚动到页面顶部
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    // 在页面加载后初始化 AOS 库
     AOS.init();
-  }, []); // 空数组表示只在组件加载时运行一次
+  }, []);
 
   return (
     <>

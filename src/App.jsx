@@ -1,18 +1,17 @@
 import "./styles/App.css";
 import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
-import Work from "./pages/Work";
-import Nav from "./pages/Nav";
-import Footer from "./pages/Footer";
-import Landing from "./pages/Landing";
-import DetailPoster from "./DetailPoster";
-import DetailMamba from "./DetailMamba";
-import DetailFangZui from "./DetailFangZui";
+import Work from "./components/Work";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Landing from "./components/Landing";
+import DetailPoster from "./pages/DetailPoster";
+import DetailMamba from "./pages/DetailMamba";
+import DetailFangZui from "./pages/DetailFangZui";
 
 function App() {
   const workRef = useRef(null);
   const scrollToWork = () => {
-    // 使用scrollIntoView滚动到"work"区域
     if (workRef.current) {
       workRef.current.scrollIntoView({ behavior: "smooth" });
     }

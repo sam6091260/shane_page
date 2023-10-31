@@ -6,14 +6,13 @@ import fangzui2 from "../assets/fengzui2.jpg";
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-import AOS from "aos"; // 导入 AOS 库
-import "aos/dist/aos.css"; // 导入 AOS 的 CSS 样式
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Work({ workRef }) {
   useEffect(() => {
-    // 在页面加载后初始化 AOS 库
     AOS.init();
-  }, []); // 空数组表示只在组件加载时运行一次
+  }, []);
 
   return (
     <>
