@@ -1,0 +1,162 @@
+
+.back {
+    margin-top: 20px;
+    width: 50px;
+    &:hover {
+        transform: scale(1.1); 
+    }
+}
+
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.introLeft {
+    margin-right: 80px;
+    h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
+
+.introRight {
+    margin-left: 80px;
+    li {
+        padding-bottom: 14px;
+        font-family: 'Noto Sans', sans-serif;
+
+    }
+}
+
+.titleH2 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 16px;
+    padding-left: 8px;
+    a {
+        text-decoration: none;
+        color: #F0862B;
+        &:hover {
+            color: #ffffff;
+
+        }
+    }
+}
+
+.post {
+    img {
+
+       margin-bottom: 32px;
+       }
+}
+
+.postTwo {
+    display: flex;
+    img {
+        width: 50%;
+    }
+}
+
+.imgSize {
+    width: 100vw
+}
+
+.meet {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 112px;
+    margin-bottom: 112px;
+    a {
+        text-decoration: none;
+        color: hsl(0, 0%, 100%);
+        &:hover {
+            color: #F0862B;
+   
+        }
+    }
+}
+
+
+
+// point right animate
+@keyframes animate_right {
+    0% {
+
+      transform: translateX(0);
+    }
+    100% {
+
+      transform: translateX(20px); 
+    }
+  }
+  
+  .point_right {
+    animation-name: animate_right;
+    animation-duration: 1s; 
+    animation-delay: 1s; 
+    animation-iteration-count: infinite; 
+    animation-direction: alternate; 
+  }
+
+
+ 
+
+  @media(max-width: 767px) {
+
+    // 縮小後圖檔轉向動畫向下
+    @keyframes animate_right {
+        0% {
+          transform: translateY(0) rotate(90deg); /* 從0度開始 */
+        }
+        100% {
+          transform: translateY(20px) rotate(90deg); /* 保持90度角度 */
+        }
+      }
+      
+      .point_right {
+        animation-name: animate_right;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform: rotate(90deg); /* 初始設置90度的旋轉 */
+      }
+
+
+    .back {
+        width: 30px;
+    }
+
+    .animate_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 48px;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .introLeft {
+        margin: 10px;
+    }
+
+    .introRight {
+        margin: 10px;
+    }
+
+    .meet {
+        font-size: 24px;
+    }
+
+}

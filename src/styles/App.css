@@ -1,0 +1,258 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: "Futura-Heavy";
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  color: white;
+  background-color: #000000;
+  background-image: url("../assets/background.png");
+  background-size: cover; /* 调整图片大小以填充整个屏幕 */
+  background-repeat: no-repeat;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1296px;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  width: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EA5413;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+nav ul a {
+  text-decoration: none;
+  color: white;
+  margin-left: 56px;
+  cursor: pointer;
+}
+nav ul a:hover {
+  color: #F0862B;
+}
+
+.landing {
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+.landing h1 {
+  font-family: "Bangers", cursive;
+  font-size: 150px;
+}
+.landing h2 {
+  font-size: 56px;
+  margin-bottom: 32px;
+}
+
+.landing-left {
+  z-index: 1;
+}
+
+.section-top {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #EA5413;
+  margin-bottom: 24px;
+}
+.section-top img {
+  width: 70px;
+  margin-bottom: 24px;
+}
+
+.section-bottom {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F0862B;
+  font-size: 32px;
+  color: #333333;
+  padding: 32px;
+  margin-bottom: 80px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.section-bottom p {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0 24px;
+}
+
+.work-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.work-top h3 {
+  font-size: 24px;
+}
+.work-top img {
+  margin-top: 56px;
+  margin-bottom: 80px;
+}
+
+.work-bottom img {
+  margin-bottom: 32px;
+}
+
+.hover:hover {
+  opacity: 0.7; /* 降低透明度 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+  transform: scale(1.05); /* 放大图像 */
+  transition: 0.3s; /* 添加平滑过渡效果 */
+}
+
+.contact h3 {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 112px;
+  margin-bottom: 112px;
+}
+
+footer {
+  background-color: #F0862B;
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.footer-top {
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-top .logo {
+  margin-bottom: 80px;
+}
+.footer-top .tag {
+  margin-bottom: 32px;
+}
+.footer-top .tag img {
+  margin: 0 12px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+}
+.footer-bottom p {
+  font-family: "Noto Sans", sans-serif;
+}
+
+@keyframes animate {
+  0% {
+    /* 定义动画的起始状态 */
+    transform: translateY(0);
+  }
+  100% {
+    /* 定义动画的结束状态 */
+    transform: translateY(20px); /* 以Y轴向下平移20像素 */
+  }
+}
+.point-down {
+  animation-name: animate;
+  animation-duration: 1s; /* 设置动画持续时间为2秒 */
+  animation-delay: 1s; /* 设置动画延迟时间为1.5秒 */
+  animation-iteration-count: infinite; /* 无限循环播放动画 */
+  animation-direction: alternate; /* 设置动画方向为交替播放 */
+}
+
+:root {
+  --color: #F0862B; /* 在根伪类中设置 --color 的值 */
+}
+
+.neon {
+  color: rgba(255, 255, 255, 0.5);
+}
+.neon h1 {
+  animation: neon 5s steps(1) infinite;
+}
+
+@keyframes neon {
+  25% {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+  }
+  19%, 30%, 100% {
+    color: var(--color);
+    text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color);
+  }
+}
+@media (max-width: 767px) {
+  nav li a {
+    margin-left: 24px;
+  }
+  .landing {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 80px;
+    padding: 12px;
+  }
+  .landing h1 {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+  .landing h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+  .section-bottom p {
+    font-size: 24px;
+  }
+  .contact h3 {
+    font-size: 20px;
+  }
+  .footer-bottom p {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=App.css.map */
