@@ -4,10 +4,21 @@ export const PRODUCT_DATA = [
     title: "basketball team | 籃球隊海報設計",
     category: "Flyer",
     customer: "New Taipei City HaiShan Basketball team 2021-2022",
-    homeImages: [{ id: "post1", src: "../src/assets/post.png" }],
+    homeImages: [
+      {
+        id: "post1",
+        src: "https://sam6091260.github.io/shane_page/src/assets/post.png",
+      },
+    ],
     images: [
-      { id: "post2", src: "../src/assets/detail/poster1.jpg" },
-      { id: "post3", src: "../src/assets/detail/poster2.jpg" },
+      {
+        id: "post2",
+        src: "https://sam6091260.github.io/shane_page/src/assets/detail/poster1.jpg",
+      },
+      {
+        id: "post3",
+        src: "https://sam6091260.github.io/shane_page/src/assets/detail/poster2.jpg",
+      },
     ],
   },
   {
@@ -15,7 +26,12 @@ export const PRODUCT_DATA = [
     title: "fried chicken shop | 品牌商標設計",
     category: "Logo / Brand / Font",
     customer: "Mamba Chicken Shop 2021",
-    homeImages: [{ id: "mamba1", src: "../src/assets/mamba.png" }],
+    homeImages: [
+      {
+        id: "mamba1",
+        src: "https://sam6091260.github.io/shane_page/src/assets/mamba.png",
+      },
+    ],
     images: [
       { id: "mamba2", src: "../src/assets/detail/mamba1.jpg" },
       {
