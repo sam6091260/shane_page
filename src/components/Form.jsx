@@ -25,9 +25,12 @@ function Form({ formRef }) {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:3001/send-email", {
-        ...formData,
-      });
+      const response = await axios.post(
+        "https://polar-thicket-73181-a753805e876d.herokuapp.com//send-email",
+        {
+          ...formData,
+        }
+      );
       const { data } = response;
 
       console.log("Email sent successfully");
