@@ -1,13 +1,9 @@
-// import post from "../assets/post.png";
-// import mamba from "../assets/mamba.png";
-// import fangzui from "../assets/fengzui.jpg";
-// import fangzui2 from "../assets/fengzui2.jpg";
 import poinDdown from "../assets/point_down.png";
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { PRODUCT_DATA } from "../constans";
+import { PRODUCT_DATA } from "../../constans";
 
 function Work({ workRef }) {
   useEffect(() => {

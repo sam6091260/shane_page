@@ -152,6 +152,45 @@ nav ul a:hover {
   transition: 0.3s; /* 添加平滑过渡效果 */
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 35%;
+  padding-bottom: 112px;
+}
+.form label {
+  margin-bottom: 5px;
+}
+.form input, .form textarea {
+  color: white; /* 新增这行，设置文字颜色为白色 */
+  border: none;
+  border-bottom: 1px solid #EA5413; /* 設定底線樣式 */
+  background: none;
+  padding: 5px; /* 設定內間距 */
+  margin-bottom: 20px; /* 設定底線與下一個元素的距離 */
+  outline: none; /* 移除預設的外框樣式 */
+}
+.form textarea {
+  height: 100px;
+}
+.form button {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 auto;
+  padding-top: 16px;
+  background: none;
+  color: #EA5413;
+}
+.form button:hover {
+  color: #F0862B;
+  transform: scale(1.2, 1.2);
+  background: none;
+}
+.form input::placeholder, .form textarea::placeholder {
+  color: white; /* 設定資訊文字顏色 */
+}
+
 .contact h3 {
   font-size: 32px;
   text-align: center;
@@ -207,6 +246,24 @@ footer {
   animation-direction: alternate; /* 设置动画方向为交替播放 */
 }
 
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner svg {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 :root {
   --color: #F0862B; /* 在根伪类中设置 --color 的值 */
 }
@@ -237,20 +294,27 @@ footer {
     justify-content: center;
     margin-top: 80px;
     padding: 12px;
+    text-align: center;
   }
   .landing h1 {
-    font-size: 64px;
+    font-size: 88px;
     margin-bottom: 32px;
   }
   .landing h2 {
-    font-size: 32px;
+    font-size: 48px;
     margin-bottom: 32px;
   }
   .section-bottom p {
     font-size: 24px;
   }
   .contact h3 {
-    font-size: 14px;
+    font-size: 20px;
+  }
+  .form {
+    max-width: 80%;
+  }
+  .footer-top .tag img {
+    width: 32px;
   }
   .footer-bottom p {
     font-size: 14px;

@@ -14,10 +14,10 @@ function Nav(props) {
             <Link to="/">index</Link>
           </li>
           <li>
-            <Link to="/">biography</Link>
+            <Link onClick={props.scrollToWork}>portfolio</Link>
           </li>
           <li>
-            <Link onClick={props.scrollToWork}>portfolio</Link>
+            <Link onClick={props.scrollToForm}>contact</Link>
           </li>
         </ul>
       </nav>

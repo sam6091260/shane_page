@@ -10,11 +10,11 @@ function Section() {
           <img src={ok} alt="ok" />
         </div>
         <div className="section-bottom">
-          <p>User Interface Design</p>
-          <p>Graphic Design</p>
-          <p>Logo</p>
-          <p>Brand</p>
-          <p>Digital illustration</p>
+          <p>user interface</p>
+          <p>graphic design</p>
+          <p>logo</p>
+          <p>brand</p>
+          <p>digital illustration</p>
         </div>
       </section>
     </>
