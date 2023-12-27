@@ -230,20 +230,20 @@ footer {
 
 @keyframes animate {
   0% {
-    /* 定义动画的起始状态 */
+    /* 動畫初始值 */
     transform: translateY(0);
   }
   100% {
-    /* 定义动画的结束状态 */
-    transform: translateY(20px); /* 以Y轴向下平移20像素 */
+    /* 動畫結束 */
+    transform: translateY(20px); /* 以Y軸平移向下20度 */
   }
 }
 .point-down {
   animation-name: animate;
-  animation-duration: 1s; /* 设置动画持续时间为2秒 */
-  animation-delay: 1s; /* 设置动画延迟时间为1.5秒 */
-  animation-iteration-count: infinite; /* 无限循环播放动画 */
-  animation-direction: alternate; /* 设置动画方向为交替播放 */
+  animation-duration: 1s; /* 動畫持續時間為2秒 */
+  animation-delay: 1s; /* 動畫持續時間為1.5秒 */
+  animation-iteration-count: infinite; /* 循環播放 */
+  animation-direction: alternate; /* 交替播放 */
 }
 
 .loading-spinner {
@@ -297,11 +297,11 @@ footer {
     text-align: center;
   }
   .landing h1 {
-    font-size: 88px;
+    font-size: 80px;
     margin-bottom: 32px;
   }
   .landing h2 {
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 32px;
   }
   .section-bottom p {
