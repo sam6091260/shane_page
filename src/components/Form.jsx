@@ -26,7 +26,7 @@ function Form({ formRef }) {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://polar-thicket-73181-a753805e876d.herokuapp.com//send-email",
+        "https://polar-thicket-73181-a753805e876d.herokuapp.com/send-email",
         {
           ...formData,
         }
