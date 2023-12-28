@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { PRODUCT_DATA } from "../../constans";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 const Products = () => {
   const { key } = useParams();
@@ -19,7 +20,7 @@ const Products = () => {
     images: [],
   });
   const [open, setOpen] = React.useState(false);
-
+  const allImages = [...selectedProduct.homeImages, ...selectedProduct.images];
   useEffect(() => {
     setSelectedProduct(
       PRODUCT_DATA.filter((product) => product.key === key)[0]
@@ -127,7 +128,8 @@ const Products = () => {
           <Lightbox
             open={open}
             close={() => setOpen(false)}
-            slides={selectedProduct.images.map((image) => ({ src: image.src }))}
+            plugins={[Zoom]}
+            slides={allImages.map((image) => ({ src: image.src }))}
           />
           {/* {selectedProduct.images.map((image, idx) => {
             const delay = 200 + 50 * (idx + 1);
