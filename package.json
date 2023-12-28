@@ -24,7 +24,8 @@
     "react-hot-toast": "^2.4.1",
     "react-photo-view": "^1.2.3",
     "react-router-dom": "^6.17.0",
-    "react-zmage": "^0.8.5-beta.37"
+    "react-zmage": "^0.8.5-beta.37",
+    "yet-another-react-lightbox": "^3.15.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

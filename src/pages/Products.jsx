@@ -6,6 +6,8 @@ import { Link, useParams } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PRODUCT_DATA } from "../../constans";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const Products = () => {
   const { key } = useParams();
@@ -16,6 +18,7 @@ const Products = () => {
     homeImages: [],
     images: [],
   });
+  const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
     setSelectedProduct(
@@ -61,6 +64,7 @@ const Products = () => {
             </ul>
           </div>
         </div>
+
         <div className="post">
           {selectedProduct.homeImages.map((image, idx) => {
             const delay = 150 + 50 * idx;
@@ -72,6 +76,7 @@ const Products = () => {
                 alt="image"
                 data-aos="fade-down"
                 data-aos-delay={delay}
+                onClick={() => setOpen(true)}
               />
             );
           })}
@@ -92,12 +97,14 @@ const Products = () => {
                       alt="image"
                       data-aos="fade-down"
                       data-aos-delay={delay}
+                      onClick={() => setOpen(true)}
                     />
                     <img
                       src={nextImage.src}
                       alt="image"
                       data-aos="fade-down"
                       data-aos-delay={delay}
+                      onClick={() => setOpen(true)}
                     />
                   </div>
                 );
@@ -113,9 +120,15 @@ const Products = () => {
                 className="imgSize"
                 data-aos="fade-down"
                 data-aos-delay={delay}
+                onClick={() => setOpen(true)}
               />
             );
           })}
+          <Lightbox
+            open={open}
+            close={() => setOpen(false)}
+            slides={selectedProduct.images.map((image) => ({ src: image.src }))}
+          />
           {/* {selectedProduct.images.map((image, idx) => {
             const delay = 200 + 50 * (idx + 1);
             const classNames = image.style
