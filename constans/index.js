@@ -11,8 +11,32 @@ import fangzui3 from "../src/assets/detail/fangzui1.jpg";
 import fangzui4 from "../src/assets/detail/fangzui2.jpg";
 import fangzui5 from "../src/assets/detail/fangzui3.jpg";
 import fangzui6 from "../src/assets/detail/fangzui4.jpg";
+import tumaz from "../src/assets/tumaz.jpg";
+import tumaz1 from "../src/assets/detail/tumaz1.jpg";
+import tumaz2 from "../src/assets/detail/tumaz2.jpg";
+import tumaz3 from "../src/assets/detail/tumaz3.jpg";
 
 export const PRODUCT_DATA = [
+  {
+    key: "tumaz",
+    title: "tumaz apparel | 像素熊設計",
+    category: "Pixel Art",
+    customer: "Tumaz Apparel 2024",
+    homeImages: [{ id: "tumaz", src: tumaz }],
+    images: [
+      {
+        id: "tumaz1",
+        src: tumaz1,
+        style: "postTwo",
+      },
+      {
+        id: "tumaz2",
+        src: tumaz2,
+        style: "postTwo",
+      },
+      { id: "tumaz3", src: tumaz3 },
+    ],
+  },
   {
     key: "poster",
     title: "basketball team | 籃球隊海報設計",
