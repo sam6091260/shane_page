@@ -1,7 +1,12 @@
 import me from "../assets/sss.png";
 import ok from "../assets/ok_hand.png";
-
+import React, { useEffect } from "react";
+import AOS from "aos";
 function Landing() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -26,9 +31,9 @@ function Landing() {
 
       <section>
         <div className="section-top">
-          <img src={ok} alt="ok" />
-          <img src={ok} alt="ok" />
-          <img src={ok} alt="ok" />
+          <img src={ok} alt="ok" data-aos="fade-down" data-aos-delay={50} />
+          <img src={ok} alt="ok" data-aos="fade-down" data-aos-delay={150} />
+          <img src={ok} alt="ok" data-aos="fade-down" data-aos-delay={250} />
         </div>
         <div className="section-bottom">
           <p>user Interface Design</p>

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import Loading from "./Loading";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Form({ formRef }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,10 +52,20 @@ function Form({ formRef }) {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       {/* 表單 */}
-      <form ref={formRef} className="form" onSubmit={handleSubmit}>
+      <form
+        ref={formRef}
+        className="form"
+        onSubmit={handleSubmit}
+        data-aos="zoom-in"
+        data-aos-delay={200}
+      >
         {isLoading ? (
           <div style={{ height: "200px" }}>
             <Loading />
