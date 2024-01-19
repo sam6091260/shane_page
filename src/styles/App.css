@@ -21,6 +21,8 @@ body {
   background-image: url("../assets/background.png");
   background-size: cover; /* 调整图片大小以填充整个屏幕 */
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 ol, ul {
