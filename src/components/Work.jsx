@@ -29,8 +29,8 @@ function Work({ workRef }) {
                     <img
                       src={homeImage.src}
                       alt="post"
-                      data-aos="fade-down"
-                      data-aos-delay="150"
+                      data-aos="fade-right"
+                      data-aos-delay="200"
                     />
                   </NavLink>
                 </div>

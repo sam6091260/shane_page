@@ -19,7 +19,7 @@
     color: white;
     background-color: #000000;
     background-image: url('../assets/background.png');
-    background-size: cover; /* 调整图片大小以填充整个屏幕 */
+    background-size: cover; /* 調整圖片大小以擴充全屏 */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -111,7 +111,6 @@
   }
 
 //   SKILL
-
 .section-top {
     display: flex;
     justify-content: center;
@@ -140,7 +139,6 @@
 }
 
 // WORK
-
  .work-top {
     display: flex;
     flex-direction: column;
@@ -163,10 +161,10 @@
  }
 
   .hover:hover {
-    opacity: 0.7; /* 降低透明度 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
-    transform: scale(1.05); /* 放大图像 */
-    transition: 0.3s; /* 添加平滑过渡效果 */
+    opacity: 0.7; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05);
+    transition: 0.3s; 
   }
 
   .form {
@@ -181,13 +179,13 @@
     }
     
     input, textarea {
-      color: white; /* 新增这行，设置文字颜色为白色 */
+      color: white; 
       border: none;
-      border-bottom: 1px solid #EA5413; /* 設定底線樣式 */
+      border-bottom: 1px solid #EA5413; 
       background: none;
-      padding: 5px; /* 設定內間距 */
-      margin-bottom: 20px; /* 設定底線與下一個元素的距離 */
-      outline: none; /* 移除預設的外框樣式 */
+      padding: 5px; 
+      margin-bottom: 20px; 
+      outline: none; 
     }
 
     textarea {
@@ -209,7 +207,7 @@
 
     }
     input::placeholder, textarea::placeholder {
-      color: white; /* 設定資訊文字顏色 */
+      color: white; 
     }
   }
   
@@ -218,7 +216,6 @@
 
 
 //  聯繫
-
 .contact {
     h3 {
         font-size: 32px;
@@ -229,7 +226,6 @@
 }
 
 // 頁尾
-
 footer {
     background-color: #F0862B;
     padding-top: 48px;
@@ -305,7 +301,7 @@ footer {
 
 // SHANE霓虹燈效果
 :root {
-  --color: #F0862B; /* 在根伪类中设置 --color 的值 */
+  --color: #F0862B; /* 在根偽類設置初始顏色 */
 }
 
 .neon {
