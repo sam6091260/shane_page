@@ -8,48 +8,54 @@ import Landing from "./components/Landing";
 import Products from "./pages/Products";
 import Form from "./components/Form";
 import ToastProvider from "./components/ToasterProvider";
+import ZoomInComponent from "./components/framer/ZoomIn";
+import Skill from "./components/Skill";
+// import GrooveBg from "./components/grooveBg/GrooveBg";
 
 function App() {
-  const workRef = useRef(null);
-  const formRef = useRef(null);
-  const scrollToWork = () => {
-    if (workRef.current) {
-      workRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const scrollToForm = () => {
-    if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+	const workRef = useRef(null);
+	const formRef = useRef(null);
+	const scrollToWork = () => {
+		if (workRef.current) {
+			workRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+	const scrollToForm = () => {
+		if (formRef.current) {
+			formRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	};
 
-  return (
-    <>
-      {/* 導覽列 */}
-      <Nav scrollToWork={scrollToWork} scrollToForm={scrollToForm} />
+	return (
+		<>
+			{/* 導覽列 */}
+			<Nav scrollToWork={scrollToWork} scrollToForm={scrollToForm} />
 
-      <Routes>
-        <Route
-          path="/"
-          element={<AllComponents workRef={workRef} formRef={formRef} />}
-        />
-        <Route path="/detail/:key" element={<Products />} />
-      </Routes>
-      {/* 頁尾 */}
-      <Footer />
-    </>
-  );
+			<Routes>
+				<Route
+					path="/"
+					element={<AllComponents workRef={workRef} formRef={formRef} />}
+				/>
+				<Route path="/detail/:key" element={<Products />} />
+			</Routes>
+			{/* 頁尾 */}
+			<Footer />
+		</>
+	);
 }
 
 function AllComponents({ workRef, formRef }) {
-  return (
-    <div>
-      <ToastProvider />
-      <Landing />
-      <Work workRef={workRef} />
-      <Form formRef={formRef} />
-    </div>
-  );
+	return (
+		<div>
+			<ToastProvider />
+			{/* <Landing /> */}
+			<ZoomInComponent />
+			<Skill />
+			<Work workRef={workRef} />
+			<Form formRef={formRef} />
+			{/* <GrooveBg /> */}
+		</div>
+	);
 }
 
 export default App;

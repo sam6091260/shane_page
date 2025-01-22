@@ -6,7 +6,6 @@
     font: inherit;
     vertical-align: baseline;
     font-family: "Futura-Heavy";
- 
   }
   
   /* HTML5 display-role reset for older browsers */
@@ -136,6 +135,9 @@
         font-family: 'Noto Sans', sans-serif;
         margin:0 24px ;
     }
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 // WORK

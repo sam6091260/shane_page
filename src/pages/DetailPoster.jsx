@@ -10,78 +10,78 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function DetailPoster() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  useEffect(() => {
-    AOS.init();
-  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	useEffect(() => {
+		AOS.init();
+	}, []);
 
-  return (
-    <>
-      <div className="container">
-        <div className="back">
-          <Link to="/">
-            <img src={back} alt="back"></img>
-          </Link>
-        </div>
-        <div className="intro">
-          <div className="introLeft">
-            <h2>Hey! Check this out! </h2>
-            <div className="animate_right">
-              <img src={finger} alt="finger" className="point_right" />
-            </div>
-          </div>
-          <div className="introRight">
-            <ul>
-              <li className="titleH2">
-                basketball team | 籃球隊海報設計 poster
-              </li>
-              <li>Flyer</li>
-              <li>Client</li>
-              <li className="title">
-                New Taipei City Haishan Basketball team 2021-2022
-              </li>
-              <li>Designer</li>
-              <li className="title">
-                {" "}
-                <a target="_blank" href="https://www.instagram.com/__ssshane/">
-                  shane
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="post">
-          <img
-            src={post}
-            alt="post"
-            data-aos="fade-down"
-            data-aos-delay="150"
-          />
-          <img
-            src={postOne}
-            alt="post"
-            data-aos="fade-down"
-            data-aos-delay="200"
-            className="imgSize"
-          />
-          <img
-            src={postTwo}
-            alt="post"
-            data-aos="fade-down"
-            data-aos-delay="250"
-            className="imgSize"
-          />
-        </div>
-        <div className="meet">
-          <Link target="_blank" to="https://www.instagram.com/__ssshane/">
-            <h3>" Meet Me "</h3>
-          </Link>
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div className="container">
+				<div className="back">
+					<Link to="/">
+						<img src={back} alt="back"></img>
+					</Link>
+				</div>
+				<div className="intro">
+					<div className="introLeft">
+						<h2>Hey! Check this out! </h2>
+						<div className="animate_right">
+							<img src={finger} alt="finger" className="point_right" />
+						</div>
+					</div>
+					<div className="introRight">
+						<ul>
+							<li className="titleH2">
+								basketball team | 籃球隊海報設計 poster
+							</li>
+							<li>Flyer</li>
+							<li>Client</li>
+							<li className="title">
+								New Taipei City Haishan Basketball team 2021-2022
+							</li>
+							<li>Designer</li>
+							<li className="title">
+								{" "}
+								<a target="_blank" href="https://www.instagram.com/__ssshane/">
+									shane
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div className="post">
+					<img
+						src={post}
+						alt="post"
+						data-aos="fade-down"
+						data-aos-delay="150"
+					/>
+					<img
+						src={postOne}
+						alt="post"
+						data-aos="fade-down"
+						data-aos-delay="200"
+						className="imgSize"
+					/>
+					<img
+						src={postTwo}
+						alt="post"
+						data-aos="fade-down"
+						data-aos-delay="250"
+						className="imgSize"
+					/>
+				</div>
+				<div className="meet">
+					<Link target="_blank" to="https://www.instagram.com/__ssshane/">
+						<h3>" Meet Me "</h3>
+					</Link>
+				</div>
+			</div>
+		</>
+	);
 }
 
 export default DetailPoster;

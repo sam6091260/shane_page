@@ -48,8 +48,11 @@
   color: #ffffff;
 }
 
+
 .post img {
   margin-bottom: 32px;
+  cursor: url('../assets/icon/zoom_in_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg'), auto;
+
 }
 
 .postTwo {

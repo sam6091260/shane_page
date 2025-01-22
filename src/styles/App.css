@@ -19,11 +19,12 @@ body {
   color: white;
   background-color: #000000;
   background-image: url("../assets/background.png");
-  background-size: cover; /* 调整图片大小以填充整个屏幕 */
+  background-size: cover; 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
+
 
 ol, ul {
   list-style: none;
@@ -67,6 +68,11 @@ nav {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #EA5413;
+  /* position: fixed;
+  width: 80%;
+  left: 50%;
+  top:0;
+  transform: translateX(-50%); */
 }
 nav ul {
   display: flex;
@@ -84,6 +90,7 @@ nav ul a:hover {
 }
 
 .landing {
+/* margin-top: 80px; */
   padding: 80px;
   display: flex;
   align-items: center;
@@ -130,6 +137,10 @@ nav ul a:hover {
   margin: 0 24px;
 }
 
+.section-bottom::-webkit-scrollbar {
+    display: none;
+}
+
 .work-top {
   display: flex;
   flex-direction: column;
@@ -149,9 +160,9 @@ nav ul a:hover {
 
 .hover:hover {
   opacity: 0.7; /* 降低透明度 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
-  transform: scale(1.05); /* 放大图像 */
-  transition: 0.3s; /* 添加平滑过渡效果 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+  transform: scale(1.05); /* 放大 */
+  transition: 0.3s; /* 平滑過渡 */
 }
 
 .form {
@@ -165,7 +176,7 @@ nav ul a:hover {
   margin-bottom: 5px;
 }
 .form input, .form textarea {
-  color: white; /* 新增这行，设置文字颜色为白色 */
+  color: white; 
   border: none;
   border-bottom: 1px solid #EA5413; /* 設定底線樣式 */
   background: none;
@@ -190,7 +201,7 @@ nav ul a:hover {
   background: none;
 }
 .form input::placeholder, .form textarea::placeholder {
-  color: white; /* 設定資訊文字顏色 */
+  color: white;
 }
 
 .contact h3 {
@@ -240,12 +251,19 @@ footer {
     transform: translateY(20px); /* 以Y軸平移向下20度 */
   }
 }
+
 .point-down {
   animation-name: animate;
-  animation-duration: 1s; /* 動畫持續時間為2秒 */
-  animation-delay: 1s; /* 動畫持續時間為1.5秒 */
-  animation-iteration-count: infinite; /* 循環播放 */
-  animation-direction: alternate; /* 交替播放 */
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: all 0.5s ease; /* 添加過渡效果 */
+}
+.point-down-scroll {
+	position: absolute;
+    left: 18%;
+	z-index: 100;
+	transition: all 0.5s ease; /* 添加過渡效果 */
 }
 
 .loading-spinner {
@@ -267,7 +285,7 @@ footer {
   }
 }
 :root {
-  --color: #F0862B; /* 在根伪类中设置 --color 的值 */
+  --color: #F0862B; /* 在根偽類設置 --color 的值 */
 }
 
 .neon {
@@ -284,7 +302,8 @@ footer {
   }
   19%, 30%, 100% {
     color: var(--color);
-    text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color);
+    text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color),
+	5px 5px 15px rgba(0, 0, 0, 1);
   }
 }
 @media (max-width: 767px) {
@@ -305,6 +324,10 @@ footer {
   .landing h2 {
     font-size: 32px;
     margin-bottom: 32px;
+  }
+  .point-down-scroll {
+	width: 16%;
+	left: 8%;
   }
   .section-bottom p {
     font-size: 24px;
