@@ -317,6 +317,11 @@ footer {
   }
 }
 @media (max-width: 767px) {
+
+	.container li {
+		display: none;
+	}
+
   nav li a {
     margin-left: 24px;
   }
