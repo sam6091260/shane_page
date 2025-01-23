@@ -13,7 +13,7 @@ const ZoomInComponent = () => {
 	useEffect(() => {
 		const handleScroll = (e) => {
 			const newScale = scale + e.deltaY * +0.01
-			setScale(Math.min(Math.max(1, newScale), 1.5))
+			setScale(Math.min(Math.max(1, newScale), 1.4))
 		}
 		window.addEventListener('wheel', handleScroll) // 清理事件 
 		return () => { window.removeEventListener('wheel', handleScroll) }

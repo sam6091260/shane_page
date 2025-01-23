@@ -110,6 +110,10 @@ nav ul a:hover {
   z-index: 1;
 }
 
+.landing-right {
+	animation: rotate 10s linear infinite;
+}
+
 .section-top {
   display: flex;
   justify-content: center;
@@ -134,8 +138,14 @@ nav ul a:hover {
 }
 .section-bottom p {
   font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
   margin: 0 24px;
 }
+
+.section-bottom p:hover {
+	color: #EA5413;
+	font-weight: bold;
+  }
 
 .section-bottom::-webkit-scrollbar {
     display: none;
