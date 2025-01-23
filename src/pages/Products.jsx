@@ -29,11 +29,11 @@ const Products = () => {
 			PRODUCT_DATA.filter((product) => product.key === key)[0]
 		);
 	}, []);
-	// 將視窗的捲軸滾動到頁面頂部，以提供良好的使用者體驗。
+	// 將視窗的捲軸滾動到頁面頂部
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
-	// 在 component 第一次渲染後執行，它使用 AOS套件，初始化該套件以啟用滾動時的動畫效果。
+	// 在 component 第一次渲染後執行，它使用 AOS套件，初始化該套件以啟用滾動時的動畫效果
 	useEffect(() => {
 		AOS.init();
 	}, []);

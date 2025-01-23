@@ -16,7 +16,7 @@ function Work({ workRef }) {
 
 		setAtBottom(isBottom);
 		setScrollY(currentScrollY);
-		setClassName(currentScrollY >= 1100 ? "point-down-scroll" : "point-down");
+		setClassName(currentScrollY >= 1180 ? "point-down-scroll" : "point-down");
 	};
 
 	const scrollToTop = () => {
@@ -36,7 +36,9 @@ function Work({ workRef }) {
 			<div className="container">
 				<div className="work" ref={workRef}>
 					<div className="work-top">
-						<h3>" Hey! Check this out! "</h3>
+						<h3 data-aos="fade-up"
+							data-aos-duration="800"
+							data-aos-easing="ease-out-back">" Hey! Check this out! "</h3>
 						<div className="animate">
 							<img
 								src={poinDdown}
@@ -61,6 +63,7 @@ function Work({ workRef }) {
 											alt="post"
 											data-aos="fade-right"
 											data-aos-delay="300"
+											data-aos-easing="ease-out-back"
 										/>
 									</NavLink>
 								</div>

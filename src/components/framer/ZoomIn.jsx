@@ -29,9 +29,8 @@ const ZoomInComponent = () => {
 
 				<div className="landing-left">
 					<h2>
-						Front End Developer
-						<br />
-						Graphic Designer
+						<div data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">Front End Developer</div>
+						<div data-aos="fade-up" data-aos-delay="450" data-aos-duration="800" data-aos-easing="ease-out-back">Graphic Designer</div>
 					</h2>
 					<div className="neon">
 						<h1 data-aos="flip-up" data-aos-delay="500">
