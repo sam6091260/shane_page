@@ -14,7 +14,7 @@ function Nav(props) {
             <Link to="/">index</Link>
           </li>
           <li>
-            <Link onClick={props.scrollToWork}>portfolio</Link>
+            <Link onClick={props.scrollToWork}>work</Link>
           </li>
           <li>
             <Link onClick={props.scrollToForm}>contact</Link>

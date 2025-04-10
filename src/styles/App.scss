@@ -1,262 +1,295 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    font-family: "Futura-Heavy";
-  }
-  
-  /* HTML5 display-role reset for older browsers */
-  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
-  }
-  
-  body {
-    line-height: 1;
-    color: white;
-    background-color: #000000;
-    background-image: url('../assets/background.png');
-    background-size: cover; /* 調整圖片大小以擴充全屏 */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-  
-  ol, ul {
-    list-style: none;
-  }
-  
-  blockquote, q {
-    quotes: none;
-  }
-  
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-  }
-  
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  
-  .wrap {
-    margin: 0 auto;
-    max-width: 1296px;
-  }
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: "Futura-Heavy";
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  color: white;
+  background-color: #000000;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  /* 調整圖片大小以擴充全屏 */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1296px;
+}
+
 //   CSS reset
-  
-  .container {
-    max-width: 1260px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  
-  .logo {
-    width: 50px;
-  }
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  width: 50px;
+}
 
 
 // 導覽列
-  nav {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #EA5413;
+nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EA5413;
 
-    ul {
-        display: flex;
-        justify-content: space-between;
-        padding: 24px;
-        
-        a {
-            text-decoration: none;
-            color: white;
-            margin-left: 56px;
-            cursor: pointer;
-            &:hover {
-                color: #F0862B;
-            }
-        }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      margin-left: 56px;
+      cursor: pointer;
+
+      &:hover {
+        color: #F0862B;
+      }
     }
   }
+}
 
 // 主頁面
-  .landing {
-    padding: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 200px;
-    h1 {
-        font-family: 'Bangers', cursive;
-        font-size: 150px;
-    }
-    h2 {
-        font-size: 56px;
-        margin-bottom: 32px;
-    }
+.landing {
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200px;
+
+  h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 150px;
   }
 
-  .landing-left {
-    z-index: 1;
+  h2 {
+    font-size: 56px;
+    margin-bottom: 32px;
   }
+}
+
+.landing-left {
+  z-index: 1;
+}
 
 //   SKILL
 .section-top {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #EA5413;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #EA5413;
+  margin-bottom: 24px;
+
+  img {
+    width: 70px;
     margin-bottom: 24px;
-    img {
-        width: 70px;
-        margin-bottom: 24px;
-    }
+  }
 }
 
 .section-bottom {
-    display: flex;
-    justify-content: space-between;
-    background-color: #F0862B;
-    font-size: 32px;
-    color: #333333;
-    padding: 32px;
-    margin-bottom: 80px;
-    overflow-x: auto;
-    white-space: nowrap;
-    p {
-        font-family: 'Noto Sans', sans-serif;
-        margin:0 24px ;
-    }
-	&::-webkit-scrollbar {
-		display: none;
-	}
+  display: flex;
+  justify-content: space-between;
+  background-color: #F0862B;
+  font-size: 32px;
+  color: #333333;
+  padding: 32px;
+  margin-bottom: 80px;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  p {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0 24px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // WORK
- .work-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   h3 {
+.work-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
     font-size: 24px;
-   }
-   img {
+  }
+
+  img {
     margin-top: 56px;
     margin-bottom: 80px;
-   }
- }
+  }
+}
 
- .work-bottom {
-    img {
-        margin-bottom: 32px;
-       
-    }
- 
- }
+.work-bottom {
+  img {
+    margin-bottom: 32px;
 
-  .hover:hover {
-    opacity: 0.7; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
-    transform: scale(1.05);
-    transition: 0.3s; 
   }
 
-  .form {
-    display: flex;
-    flex-direction: column;
+}
+
+.hover:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 35%;
+  padding-bottom: 112px;
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    color: white;
+    border: none;
+    border-bottom: 1px solid #EA5413;
+    background: none;
+    padding: 5px;
+    margin-bottom: 20px;
+    outline: none;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 24px;
     margin: 0 auto;
-    max-width: 35%;
-    padding-bottom: 112px;
+    padding-top: 16px;
+    background: none;
+    color: #EA5413;
 
-    label {
-      margin-bottom: 5px;
-    }
-    
-    input, textarea {
-      color: white; 
-      border: none;
-      border-bottom: 1px solid #EA5413; 
+    &:hover {
+      color: #F0862B;
+      transform: scale(1.2, 1.2);
       background: none;
-      padding: 5px; 
-      margin-bottom: 20px; 
-      outline: none; 
     }
 
-    textarea {
-      height: 100px;
-    }
-
-    button {
-      cursor: pointer;
-      font-size: 24px;
-      margin: 0 auto;
-      padding-top: 16px;
-      background: none;
-      color: #EA5413;
-      &:hover {
-        color: #F0862B;
-        transform: scale(1.2,1.2);
-        background: none;
-      }
-
-    }
-    input::placeholder, textarea::placeholder {
-      color: white; 
-    }
   }
-  
-  
-  
+
+  input::placeholder,
+  textarea::placeholder {
+    color: white;
+  }
+}
+
+
+
 
 
 //  聯繫
 .contact {
-    h3 {
-        font-size: 32px;
-        text-align: center;
-        margin-top: 112px;
-        margin-bottom: 112px;
-    }
+  h3 {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 112px;
+    margin-bottom: 112px;
+  }
 }
 
 // 頁尾
 footer {
-    background-color: #F0862B;
-    padding-top: 48px;
-    padding-bottom: 24px;
+  background-color: #F0862B;
+  padding-top: 48px;
+  padding-bottom: 24px;
 }
 
 .footer-top {
-    border-bottom: 1px solid #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .logo {
-        margin-bottom: 80px;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+    margin-bottom: 80px;
+  }
+
+  .tag {
+    margin-bottom: 32px;
+
+    img {
+      margin: 0 12px;
     }
-    .tag {
-        margin-bottom: 32px;
-        img {
-            margin: 0 12px;
-        }
-        
-    }
+
+  }
 }
 
-.footer-bottom{
-    text-align: center;
-    margin-top: 24px;
-    p {
-        font-family: 'Noto Sans', sans-serif;
-    }
+.footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+
+  p {
+    font-family: 'Noto Sans', sans-serif;
+  }
 }
 
 // point down animate
@@ -265,18 +298,24 @@ footer {
     /* 動畫初始值 */
     transform: translateY(0);
   }
+
   100% {
     /* 動畫結束 */
-    transform: translateY(20px); /* 以Y軸平移向下20度 */
+    transform: translateY(20px);
+    /* 以Y軸平移向下20度 */
   }
 }
 
 .point-down {
   animation-name: animate;
-  animation-duration: 1s; /* 動畫持續時間為2秒 */
-  animation-delay: 1s; /* 動畫持續時間為1.5秒 */
-  animation-iteration-count: infinite; /* 循環播放 */
-  animation-direction: alternate; /* 交替播放 */
+  animation-duration: 1s;
+  /* 動畫持續時間為2秒 */
+  animation-delay: 1s;
+  /* 動畫持續時間為1.5秒 */
+  animation-iteration-count: infinite;
+  /* 循環播放 */
+  animation-direction: alternate;
+  /* 交替播放 */
 }
 
 // loading動畫
@@ -294,6 +333,7 @@ footer {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -303,7 +343,8 @@ footer {
 
 // SHANE霓虹燈效果
 :root {
-  --color: #F0862B; /* 在根偽類設置初始顏色 */
+  --color: #F0862B;
+  /* 在根偽類設置初始顏色 */
 }
 
 .neon {
@@ -319,7 +360,10 @@ footer {
     color: rgba(255, 255, 255, 0.5);
     text-shadow: none;
   }
-  19%, 30%, 100% {
+
+  19%,
+  30%,
+  100% {
     color: var(--color);
     text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color);
   }
@@ -330,7 +374,7 @@ footer {
 
   nav {
     li {
-      a{
+      a {
         margin-left: 24px;
       }
     }
@@ -342,17 +386,21 @@ footer {
     margin-top: 80px;
     padding: 12px;
     text-align: center;
+
     h1 {
-        font-size: 72px;
-        margin-bottom: 32px;
+      font-size: 72px;
+      margin-bottom: 32px;
     }
+
     h2 {
-        font-size: 32px;
-        margin-bottom: 32px;
+      font-size: 32px;
+      margin-bottom: 32px;
     }
   }
 
   .section-bottom {
+    cursor: grab;
+
     p {
       font-size: 24px;
     }
@@ -372,7 +420,7 @@ footer {
     .tag {
       img {
         width: 32px;
-     } 
+      }
     }
   }
 

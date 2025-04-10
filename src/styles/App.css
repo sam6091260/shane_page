@@ -10,7 +10,17 @@
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -19,22 +29,27 @@ body {
   color: white;
   background-color: #000000;
   background-image: url("../assets/background.png");
-  background-size: cover; 
+  background-size: cover;
+  /* 調整圖片大小以擴充全屏 */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
-
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -68,11 +83,6 @@ nav {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #EA5413;
-  /* position: fixed;
-  width: 80%;
-  left: 50%;
-  top:0;
-  transform: translateX(-50%); */
 }
 nav ul {
   display: flex;
@@ -90,7 +100,6 @@ nav ul a:hover {
 }
 
 .landing {
-/* margin-top: 80px; */
   padding: 80px;
   display: flex;
   align-items: center;
@@ -108,10 +117,6 @@ nav ul a:hover {
 
 .landing-left {
   z-index: 1;
-}
-
-.landing-right {
-	animation: rotate 10s linear infinite;
 }
 
 .section-top {
@@ -138,17 +143,10 @@ nav ul a:hover {
 }
 .section-bottom p {
   font-family: "Noto Sans", sans-serif;
-  cursor: pointer;
   margin: 0 24px;
 }
-
-.section-bottom p:hover {
-	color: #EA5413;
-	font-weight: bold;
-  }
-
 .section-bottom::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .work-top {
@@ -169,10 +167,10 @@ nav ul a:hover {
 }
 
 .hover:hover {
-  opacity: 0.7; /* 降低透明度 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加陰影 */
-  transform: scale(1.05); /* 放大 */
-  transition: 0.3s; /* 平滑過渡 */
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 .form {
@@ -185,14 +183,15 @@ nav ul a:hover {
 .form label {
   margin-bottom: 5px;
 }
-.form input, .form textarea {
-  color: white; 
+.form input,
+.form textarea {
+  color: white;
   border: none;
-  border-bottom: 1px solid #EA5413; /* 設定底線樣式 */
+  border-bottom: 1px solid #EA5413;
   background: none;
-  padding: 5px; /* 設定內間距 */
-  margin-bottom: 20px; /* 設定底線與下一個元素的距離 */
-  outline: none; /* 移除預設的外框樣式 */
+  padding: 5px;
+  margin-bottom: 20px;
+  outline: none;
 }
 .form textarea {
   height: 100px;
@@ -210,7 +209,11 @@ nav ul a:hover {
   transform: scale(1.2, 1.2);
   background: none;
 }
-.form input::placeholder, .form textarea::placeholder {
+.form input::-moz-placeholder, .form textarea::-moz-placeholder {
+  color: white;
+}
+.form input::placeholder,
+.form textarea::placeholder {
   color: white;
 }
 
@@ -258,22 +261,20 @@ footer {
   }
   100% {
     /* 動畫結束 */
-    transform: translateY(20px); /* 以Y軸平移向下20度 */
+    transform: translateY(20px);
+    /* 以Y軸平移向下20度 */
   }
 }
-
 .point-down {
   animation-name: animate;
   animation-duration: 1s;
+  /* 動畫持續時間為2秒 */
+  animation-delay: 1s;
+  /* 動畫持續時間為1.5秒 */
   animation-iteration-count: infinite;
+  /* 循環播放 */
   animation-direction: alternate;
-  transition: all 0.5s ease; /* 添加過渡效果 */
-}
-.point-down-scroll {
-	position: absolute;
-    left: 18%;
-	z-index: 100;
-	transition: all 0.5s ease; /* 添加過渡效果 */
+  /* 交替播放 */
 }
 
 .loading-spinner {
@@ -295,7 +296,8 @@ footer {
   }
 }
 :root {
-  --color: #F0862B; /* 在根偽類設置 --color 的值 */
+  --color: #F0862B;
+  /* 在根偽類設置初始顏色 */
 }
 
 .neon {
@@ -312,16 +314,10 @@ footer {
   }
   19%, 30%, 100% {
     color: var(--color);
-    text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color),
-	5px 5px 15px rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color);
   }
 }
 @media (max-width: 767px) {
-
-	.container li {
-		display: none;
-	}
-
   nav li a {
     margin-left: 24px;
   }
@@ -340,9 +336,8 @@ footer {
     font-size: 32px;
     margin-bottom: 32px;
   }
-  .point-down-scroll {
-	width: 16%;
-	left: 8%;
+  .section-bottom {
+    cursor: grab;
   }
   .section-bottom p {
     font-size: 24px;
