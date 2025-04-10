@@ -36,26 +36,18 @@ function Landing() {
 			el.classList.remove("active");
 		};
 
-		const handleMouseLeave = () => {
-			isDown = false;
-			el.classList.remove("active");
-		};
-
 		el.addEventListener("mousedown", handleMouseDown);
 		el.addEventListener("mousemove", handleMouseMove);
 		el.addEventListener("mouseup", handleMouseUp);
-		el.addEventListener("mouseleave", handleMouseLeave);
-
 		return () => {
 			el.removeEventListener("mousedown", handleMouseDown);
 			el.removeEventListener("mousemove", handleMouseMove);
 			el.removeEventListener("mouseup", handleMouseUp);
-			el.removeEventListener("mouseleave", handleMouseLeave);
 		};
 	}, []);
 
 	const handleDOM = (position) => {
-		if (window.innerWidth > 767) {
+		if (window.innerWidth) {
 			window.scrollTo({ top: position, behavior: "smooth" });
 		}
 	};

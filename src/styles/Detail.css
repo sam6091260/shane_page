@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .back {
   margin-top: 20px;
   width: 50px;
@@ -49,6 +48,7 @@
 }
 
 .post img {
+  cursor: zoom-in;
   margin-bottom: 32px;
 }
 
@@ -96,10 +96,10 @@
 @media (max-width: 767px) {
   @keyframes animate_right {
     0% {
-      transform: translateY(0) rotate(90deg); /* 從0度開始 */
+      transform: translateY(0) rotate(90deg);
     }
     100% {
-      transform: translateY(20px) rotate(90deg); /* 保持90度角度 */
+      transform: translateY(20px) rotate(90deg);
     }
   }
   .point_right {
@@ -107,7 +107,7 @@
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    transform: rotate(90deg); /* 初始設置90度的旋轉 */
+    transform: rotate(90deg);
   }
   .back {
     width: 30px;

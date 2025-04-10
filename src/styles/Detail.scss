@@ -1,9 +1,9 @@
-
 .back {
     margin-top: 20px;
     width: 50px;
+
     &:hover {
-        transform: scale(1.1); 
+        transform: scale(1.1);
     }
 }
 
@@ -17,6 +17,7 @@
 
 .introLeft {
     margin-right: 80px;
+
     h2 {
         font-size: 24px;
         margin-bottom: 24px;
@@ -25,6 +26,7 @@
 
 .introRight {
     margin-left: 80px;
+
     li {
         padding-bottom: 14px;
         font-family: 'Noto Sans', sans-serif;
@@ -41,9 +43,11 @@
 .title {
     font-size: 16px;
     padding-left: 8px;
+
     a {
         text-decoration: none;
         color: #F0862B;
+
         &:hover {
             color: #ffffff;
 
@@ -53,16 +57,17 @@
 
 .post {
     img {
-
-       margin-bottom: 32px;
-       }
+        cursor: zoom-in;
+        margin-bottom: 32px;
+    }
 }
 
 .postTwo {
     display: flex;
-   img {
-    width: 50%;
-   }
+
+    img {
+        width: 50%;
+    }
 }
 
 .imgSize {
@@ -74,12 +79,14 @@
     text-align: center;
     margin-top: 112px;
     margin-bottom: 112px;
+
     a {
         text-decoration: none;
         color: hsl(0, 0%, 100%);
+
         &:hover {
             color: #F0862B;
-   
+
         }
     }
 }
@@ -90,44 +97,46 @@
 @keyframes animate_right {
     0% {
 
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     100% {
 
-      transform: translateX(20px); 
+        transform: translateX(20px);
     }
-  }
-  
-  .point_right {
+}
+
+.point_right {
     animation-name: animate_right;
-    animation-duration: 1s; 
-    animation-delay: 1s; 
-    animation-iteration-count: infinite; 
-    animation-direction: alternate; 
-  }
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
 
- 
 
-  @media(max-width: 767px) {
+
+@media(max-width: 767px) {
 
     // 縮小後圖檔轉向動畫向下
     @keyframes animate_right {
         0% {
-          transform: translateY(0) rotate(90deg); /* 從0度開始 */
+            transform: translateY(0) rotate(90deg);
         }
+
         100% {
-          transform: translateY(20px) rotate(90deg); /* 保持90度角度 */
+            transform: translateY(20px) rotate(90deg);
         }
-      }
-      
-      .point_right {
+    }
+
+    .point_right {
         animation-name: animate_right;
         animation-duration: 1s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
-        transform: rotate(90deg); /* 初始設置90度的旋轉 */
-      }
+        transform: rotate(90deg);
+    }
 
 
     .back {
@@ -139,10 +148,10 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 48px;
-        
+
     }
 
-   
+
     .intro {
         display: flex;
         flex-direction: column;

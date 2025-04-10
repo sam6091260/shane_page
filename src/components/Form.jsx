@@ -58,7 +58,6 @@ function Form({ formRef }) {
 
   return (
     <>
-      {/* 表單 */}
       <form
         ref={formRef}
         className="form"
