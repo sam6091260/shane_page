@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Landing from '../Landing';
 import AOS from "aos";
@@ -6,8 +6,24 @@ import me from "@/assets/sss.png";
 
 const ZoomInComponent = () => {
 	const [scale, setScale] = useState(1)
+	const [offsetX, setOffsetX] = useState(0);
+	const [offsetY, setOffsetY] = useState(0);
 	useEffect(() => {
 		AOS.init();
+		const handleMouseMove = (e) => {
+			const winWidth = window.innerWidth;
+			const winHeight = window.innerHeight;
+			const mouseY = e.clientY;
+			const mouseX = e.clientX;
+			const ratio = (mouseY - winHeight / 2) / (winHeight / 2); // -1 ~ 1
+			const ratioX = (mouseX - winWidth / 2) / (winWidth / 2);
+
+			setOffsetY(ratio * 4);
+			setOffsetX(ratioX * 4);
+		};
+
+		window.addEventListener("mousemove", handleMouseMove);
+		return () => window.removeEventListener("mousemove", handleMouseMove);
 	}, []);
 
 	useEffect(() => {
@@ -25,7 +41,10 @@ const ZoomInComponent = () => {
 
 
 		<div className="container">
-			<div className="landing" data-aos="fade-up" data-aos-delay="200">
+			<div className="landing"
+				data-aos="fade-up"
+				data-aos-delay="200"
+			>
 
 				<div className="landing-left">
 					<h2>
@@ -42,10 +61,14 @@ const ZoomInComponent = () => {
 				<motion.div
 					initial={{ scale: 0.1 }} // 初始縮放為0.5
 					animate={{ scale: scale }} // 使用 state 變量來控制縮放 
-					transition={{ duration: 0.5, delay: 0.1, ease: "linear" }}
+					transition={{ duration: 0.5, delay: 0.3, ease: "linear" }}
 
 				>
-					<div className="landing-right">
+					<div className="landing-right"
+						style={{
+							transform: `translate(${offsetX}px, ${offsetY}px)`,
+							transition: "transform 0.1s ease-out",
+						}}>
 						<img src={me} alt="me" />
 					</div>
 				</motion.div >
