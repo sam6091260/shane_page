@@ -1,46 +1,33 @@
 import "./styles/App.css";
-import React, { useRef, useState } from "react";
+import React, { useRef, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Work from "./components/Work";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import Landing from "./components/Landing";
-import Products from "./pages/Products";
-import Form from "./components/Form";
-import ToastProvider from "./components/ToasterProvider";
-import ZoomInComponent from "./components/framer/ZoomIn";
-import Skill from "./components/Skill";
-// import GrooveBg from "./components/grooveBg/GrooveBg";
+
+const Work = lazy(() => import("./components/Work"));
+const Nav = lazy(() => import("./components/Nav"));
+const Footer = lazy(() => import("./components/Footer"));
+const Landing = lazy(() => import("./components/Landing"));
+const Products = lazy(() => import("./pages/Products"));
+const Form = lazy(() => import("./components/Form"));
+const ToastProvider = lazy(() => import("./components/ToasterProvider"));
+const ZoomInComponent = lazy(() => import("./components/framer/ZoomIn"));
+const Skill = lazy(() => import("./components/Skill"));
 
 function App() {
 	const workRef = useRef(null);
 	const formRef = useRef(null);
-	const scrollToWork = () => {
-		if (workRef.current) {
-			workRef.current.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-	const scrollToForm = () => {
-		if (formRef.current) {
-			formRef.current.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-
+	const scrollToWork = () => workRef.current?.scrollIntoView({ behavior: "smooth" });
+	const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
 	return (
-		<>
-			{/* 導覽列 */}
+		<Suspense fallback={<div>Loading...</div>}>
 			<Nav scrollToWork={scrollToWork} scrollToForm={scrollToForm} />
 
 			<Routes>
-				<Route
-					path="/"
-					element={<AllComponents workRef={workRef} formRef={formRef} />}
-				/>
+				<Route path="/" element={<AllComponents workRef={workRef} formRef={formRef} />} />
 				<Route path="/detail/:key" element={<Products />} />
 			</Routes>
-			{/* 頁尾 */}
+
 			<Footer />
-		</>
+		</Suspense>
 	);
 }
 
