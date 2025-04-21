@@ -143,15 +143,35 @@ nav ul a:hover {
 }
 
 .section-bottom {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
   background-color: #F0862B;
   font-size: 32px;
   color: #333333;
   padding: 32px;
   margin-bottom: 80px;
-  overflow-x: auto;
   white-space: nowrap;
+}
+
+.section-bottom .marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 5s linear infinite;
+}
+
+.section-bottom .marquee-content p {
+  display: inline-block;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
 }
 
 .section-bottom p {

@@ -1,4 +1,3 @@
-
 import ok from "../assets/ok_hand.png";
 import React, { useEffect, useRef } from "react";
 import AOS from "aos";
@@ -52,20 +51,39 @@ function Landing() {
 		}
 	};
 
+	const images = [
+        { delay: 50 },
+        { delay: 150 },
+        { delay: 250 },
+    ];
+
+
 	return (
 		<>
 			<section>
 				<div className="section-top">
-					<img src={ok} alt="ok" data-aos="fade-down" data-aos-delay={50} />
-					<img src={ok} alt="ok" data-aos="fade-down" data-aos-delay={150} />
-					<img src={ok} alt="ok" data-aos="fade-down" data-aos-delay={250} />
+				{images.map((img, index) => (
+                        <img
+                            key={index}
+                            src={ok}
+                            alt="ok"
+                            data-aos="fade-down"
+                            data-aos-delay={img.delay}
+                        />
+                    ))}
 				</div>
 				<div className="section-bottom" ref={scrollRef}>
-					<p onClick={() => handleDOM(0)}>user Interface Design</p>
-					<p onClick={() => handleDOM(1400)}>graphic Design</p>
-					<p onClick={() => handleDOM(1860)}>logo</p>
-					<p onClick={() => handleDOM(2310)}>brand</p>
-					<p onClick={() => handleDOM(900)}>digital illustration</p>
+					<div className="marquee-content">
+						{[...Array(3)].map((_, i) => (
+						<React.Fragment key={i}>
+							<p onClick={() => handleDOM(0)}>user Interface Design</p>
+							<p onClick={() => handleDOM(1400)}>graphic Design</p>
+							<p onClick={() => handleDOM(1860)}>logo</p>
+							<p onClick={() => handleDOM(2310)}>brand</p>
+							<p onClick={() => handleDOM(900)}>digital illustration</p>
+						</React.Fragment>
+						))}
+					</div>
 				</div>
 			</section>
 		</>
