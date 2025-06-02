@@ -11,12 +11,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function DetailMamba() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  useEffect(() => {
-    AOS.init();
-  }, []);
+	useEffect(() => {
+		AOS.init();
+		window.scrollTo(0, 0);
+	}, []);
 
   return (
     <>

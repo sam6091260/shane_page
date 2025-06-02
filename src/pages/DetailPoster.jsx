@@ -11,10 +11,8 @@ import "aos/dist/aos.css";
 
 function DetailPoster() {
 	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-	useEffect(() => {
 		AOS.init();
+		window.scrollTo(0, 0);
 	}, []);
 
 	return (

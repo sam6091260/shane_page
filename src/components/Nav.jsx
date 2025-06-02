@@ -17,6 +17,9 @@ function Nav(props) {
             <Link onClick={props.scrollToWork}>work</Link>
           </li>
           <li>
+            <Link to="/gallery">gallery</Link>
+          </li>
+          <li>
             <Link onClick={props.scrollToForm}>contact</Link>
           </li>
         </ul>

@@ -14,11 +14,9 @@ import "aos/dist/aos.css";
 
 function DetailFangZui() {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  useEffect(() => {
-    AOS.init();
-  }, []);
+		AOS.init();
+		window.scrollTo(0, 0);
+	}, []);
 
   return (
     <>

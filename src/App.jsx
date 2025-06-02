@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import React, { useRef, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import Loading from "./components/Loading";
 
 const Work = lazy(() => import("./components/Work"));
 const Nav = lazy(() => import("./components/Nav"));
@@ -11,6 +12,7 @@ const Form = lazy(() => import("./components/Form"));
 const ToastProvider = lazy(() => import("./components/ToasterProvider"));
 const ZoomInComponent = lazy(() => import("./components/framer/ZoomIn"));
 const Skill = lazy(() => import("./components/Skill"));
+const Gallery = lazy(() => import("./pages/Gallery"));
 
 function App() {
 	const workRef = useRef(null);
@@ -18,12 +20,13 @@ function App() {
 	const scrollToWork = () => workRef.current?.scrollIntoView({ behavior: "smooth" });
 	const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<div><Loading /></div>}>
 			<Nav scrollToWork={scrollToWork} scrollToForm={scrollToForm} />
 
 			<Routes>
 				<Route path="/" element={<AllComponents workRef={workRef} formRef={formRef} />} />
 				<Route path="/detail/:key" element={<Products />} />
+				<Route path="/gallery" element={<Gallery />} />
 			</Routes>
 
 			<Footer />

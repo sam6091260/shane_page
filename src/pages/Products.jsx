@@ -2,7 +2,7 @@ import finger from "../assets/detail/point_right.png";
 import back from "../assets/detail/back_page.png";
 import "../styles/Detail.css";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PRODUCT_DATA } from "../../constans";
@@ -11,8 +11,11 @@ import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 const Products = () => {
-	// 從 URL 中獲取 key 參數的值
 	const { key } = useParams();
+	const location = useLocation();
+	const navigate = useNavigate();
+	const fromGallery = location.state?.from === 'gallery';
+
 	const [selectedProduct, setSelectedProduct] = useState({
 		title: "",
 		category: "",
@@ -23,28 +26,28 @@ const Products = () => {
 	const [open, setOpen] = React.useState(false);
 	const allImages = [...selectedProduct.homeImages, ...selectedProduct.images];
 
-	// 初始化 selectedProduct 狀態。透過 PRODUCT_DATA 中的資料，根據給定的 key，找到對應的 product 資訊
 	useEffect(() => {
-		setSelectedProduct(
-			PRODUCT_DATA.filter((product) => product.key === key)[0]
-		);
-	}, []);
-	// 將視窗的捲軸滾動到頁面頂部
-	useEffect(() => {
+		setSelectedProduct(PRODUCT_DATA.find((product) => product.key === key));
 		window.scrollTo(0, 0);
-	}, []);
-	// 在 component 第一次渲染後執行，它使用 AOS套件，初始化該套件以啟用滾動時的動畫效果
-	useEffect(() => {
 		AOS.init();
 	}, []);
+	
+
+	const handleBack = () => {
+		if (fromGallery) {
+			navigate('/gallery');
+		} else {
+			navigate('/');
+		}
+	};
 
 	return (
 		<>
 			<div className="container">
 				<div className="back">
-					<Link to="/">
-						<img src={back} alt="back"></img>
-					</Link>
+					<div onClick={handleBack} style={{ cursor: 'pointer' }}>
+						<img src={back} alt="back" />
+					</div>
 				</div>
 				<div className="intro">
 					<div className="introLeft">
@@ -72,7 +75,6 @@ const Products = () => {
 				<div className="post">
 					{selectedProduct.homeImages.map((image, idx) => {
 						const delay = 150 + 50 * idx;
-
 						return (
 							<img
 								key={image.id}
@@ -87,15 +89,13 @@ const Products = () => {
 
 					{selectedProduct.images.map((image, idx) => {
 						const delay = 200 + 50 * (idx + 1);
-
 						if (image.style === "postTwo") {
 							const nextImage = selectedProduct.images[idx + 1];
 							const isNextImagePostTwo =
 								nextImage && nextImage.style === "postTwo";
-
 							if (isNextImagePostTwo) {
 								return (
-									<div key={idx} className="postTwo">
+									<div key={image.id} className="postTwo">
 										<img
 											src={image.src}
 											alt="image"
@@ -113,44 +113,28 @@ const Products = () => {
 									</div>
 								);
 							}
-							return;
+							return null;
 						}
-
 						return (
 							<img
 								key={image.id}
 								src={image.src}
 								alt="image"
-								className="imgSize"
 								data-aos="fade-down"
 								data-aos-delay={delay}
 								onClick={() => setOpen(true)}
 							/>
 						);
 					})}
-					<Lightbox
-						open={open}
-						close={() => setOpen(false)}
-						plugins={[Zoom]}
-						slides={allImages.map((image) => ({ src: image.src }))}
-					/>
-					{/* {selectedProduct.images.map((image, idx) => {
-            const delay = 200 + 50 * (idx + 1);
-            const classNames = image.style
-              ? `postTwo ${image.style}`
-              : "postTwo";
-            return (
-              <img
-                key={image.id}
-                src={image.src}
-                alt="image"
-                className={classNames}
-                data-aos="fade-down"
-                data-aos-delay={delay}
-              />
-            );
-          })} */}
 				</div>
+
+				<Lightbox
+					open={open}
+					close={() => setOpen(false)}
+					slides={allImages.map((image) => ({ src: image.src }))}
+					plugins={[Zoom]}
+				/>
+
 				<div className="meet">
 					<Link target="_blank" to="https://www.instagram.com/__ssshane/">
 						<h3>" Meet Me "</h3>

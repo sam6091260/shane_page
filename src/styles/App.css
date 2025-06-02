@@ -74,7 +74,7 @@ img {
 }
 
 .logo {
-  width: 50px;
+  max-width: 50px;
 }
 
 nav {
@@ -149,22 +149,26 @@ nav ul a:hover {
   background-color: #F0862B;
   font-size: 32px;
   color: #333333;
-  padding: 32px;
+  padding: 32px 0 36px 0;
   margin-bottom: 80px;
   white-space: nowrap;
 }
 
 .section-bottom .marquee-content {
-  display: flex;
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-flex;
   animation: marquee 5s linear infinite;
+  will-change: transform;
 }
 
 .section-bottom .marquee-content p {
   display: inline-block;
   margin: 0 2rem;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.section-bottom:hover .marquee-content {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
@@ -172,7 +176,7 @@ nav ul a:hover {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-20%);
+    transform: translateX(-33.33%);
   }
 }
 .section-bottom p {
@@ -375,6 +379,9 @@ footer {
   nav li a {
     margin-left: 24px;
   }
+  .container {
+    padding: 0 8px;
+  }
   .landing {
     flex-direction: column;
     justify-content: center;
@@ -395,6 +402,7 @@ footer {
     left: 8%;
   }
   .section-bottom {
+    padding: 16px 0 24px 0;
     cursor: grab;
   }
   .section-bottom p {
@@ -405,6 +413,9 @@ footer {
   }
   .form {
     max-width: 80%;
+  }
+  .footer-top .logo {
+    margin-bottom: 40px;
   }
   .footer-top .tag img {
     width: 32px;
