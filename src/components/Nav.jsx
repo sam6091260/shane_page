@@ -1,25 +1,9 @@
 import logo from "../assets/shhh-logo.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Nav(props) {
-
-  const location = useLocation();
-	const navigate = useNavigate();
-
-	const fromGallery = location.state?.from === 'gallery';
-  const handleImageClick = (productKey) => {
-    
-    if(fromGallery) {
-      navigate(`/`);
-
-    } else {
-
-    }
-
-  };
   return (
     <>
-      {/* 導覽列 */}
       <nav className="container">
         <Link to="/">
           <img src={logo} alt="logo" className="logo" />
