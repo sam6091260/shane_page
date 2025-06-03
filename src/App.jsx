@@ -1,6 +1,6 @@
 import "./styles/App.css";
-import React, { useRef, lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect, useRef, lazy, Suspense } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Loading from "./components/Loading";
 
 const Work = lazy(() => import("./components/Work"));
@@ -17,8 +17,21 @@ const Gallery = lazy(() => import("./pages/Gallery"));
 function App() {
 	const workRef = useRef(null);
 	const formRef = useRef(null);
+	const location = useLocation();
 	const scrollToWork = () => workRef.current?.scrollIntoView({ behavior: "smooth" });
 	const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
+
+	useEffect(() => {
+		if (location.pathname === "/" && location.state?.scrollTarget === "work") {
+			scrollToWork();
+		}
+		if (location.pathname === "/" && location.state?.scrollTarget === "contect") {
+			scrollToForm();
+		}
+	}, [location]);
+	
+
+	
 	return (
 		<Suspense fallback={<div><Loading /></div>}>
 			<Nav scrollToWork={scrollToWork} scrollToForm={scrollToForm} />
