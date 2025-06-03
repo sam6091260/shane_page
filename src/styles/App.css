@@ -376,6 +376,16 @@ footer {
     text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color), 5px 5px 15px rgb(0, 0, 0);
   }
 }
+@media (max-width: 1094px) {
+  .landing {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .landing h1 {
+    font-size: 120px;
+  }
+}
 @media (max-width: 767px) {
   nav li a {
     margin-left: 24px;
@@ -384,11 +394,8 @@ footer {
     padding: 0 8px;
   }
   .landing {
-    flex-direction: column;
-    justify-content: center;
     margin-top: 80px;
     padding: 12px;
-    text-align: center;
   }
   .landing h1 {
     font-size: 72px;
