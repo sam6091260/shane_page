@@ -130,6 +130,9 @@ nav ul a:hover {
   z-index: 1;
 }
 
+.landing-right {
+  animation: marquee 5s linear infinite;
+}
 .animate {
   height: 30vh;
 }

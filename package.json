@@ -11,6 +11,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@react-three/drei": "^9.115.0",
+    "@react-three/fiber": "^8.18.0",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
     "body-parser": "^1.20.2",
@@ -28,6 +30,7 @@
     "react-responsive-masonry": "^2.7.1",
     "react-router-dom": "^6.17.0",
     "react-zmage": "^0.8.5-beta.37",
+    "three": "^0.177.0",
     "yet-another-react-lightbox": "^3.15.6"
   },
   "devDependencies": {

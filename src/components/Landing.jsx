@@ -2,6 +2,8 @@ import me from "../assets/sss.png";
 import ok from "../assets/ok_hand.png";
 import React, { useEffect } from "react";
 import AOS from "aos";
+import Sphere from "./SphereWithTexture";
+
 function Landing() {
 	useEffect(() => {
 		AOS.init();
@@ -24,7 +26,8 @@ function Landing() {
 						</div>
 					</div>
 					<div className="landing-right">
-						<img src={me} alt="me" />
+						{/* <img src={me} alt="me" /> */}
+						<Sphere />
 					</div>
 				</div>
 			</div>

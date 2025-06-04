@@ -51,8 +51,8 @@ function AllComponents({ workRef, formRef }) {
 	return (
 		<div>
 			<ToastProvider />
-			{/* <Landing /> */}
-			<ZoomInComponent />
+			<Landing />
+			{/* <ZoomInComponent /> */}
 			<Skill />
 			<Work workRef={workRef} />
 			<Form formRef={formRef} />
