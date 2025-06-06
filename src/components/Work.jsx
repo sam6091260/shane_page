@@ -13,10 +13,13 @@ function Work({ workRef }) {
 	const handleScroll = () => {
 		const currentScrollY = window.scrollY;
 		const isBottom = currentScrollY >= document.body.scrollHeight - window.innerHeight - 100;
+		const isMobile = window.innerWidth <= 768;
+		const scrollThreshold = isMobile ? 768 : 1180;
+		const positionOffset = isMobile ? 180 : 0;
 
 		setAtBottom(isBottom);
-		setScrollY(currentScrollY);
-		setClassName(currentScrollY >= 1180 ? "point-down-scroll" : "point-down");
+		setScrollY(currentScrollY + positionOffset);
+		setClassName(currentScrollY >= scrollThreshold ? "point-down-scroll" : "point-down");
 	};
 
 	const scrollToTop = () => {

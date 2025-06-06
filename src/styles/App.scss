@@ -108,13 +108,48 @@ nav ul a:hover {
   color: #F0862B;
 }
 
+// .landing {
+//   padding: 80px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin-bottom: 200px;
+// }
+
 .landing {
   padding: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 200px;
-}
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  // &-left {
+  //   position: relative;
+  //   z-index: 2;
+  //   padding-right: 2rem;
+
+    // h2 {
+    //   font-size: 1.5rem;
+    //   margin-bottom: 1rem;
+    // }
+
+  //   .neon {
+  //     h1 {
+  //       font-size: 3rem;
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
+
+  // &-right {
+  //   position: absolute;
+  //   right: 0;
+  //   z-index: 1;
+  // }
+} 
 
 .landing h1 {
   font-family: "Bangers", cursive;
@@ -127,14 +162,23 @@ nav ul a:hover {
 }
 
 .landing-left {
-  z-index: 1;
+  // z-index: 1;
+  position: relative;
+  z-index: 2;
+  padding-right: 2rem;
 }
 
 .landing-right {
-  animation: marquee 5s linear infinite;
+  position: absolute;
+	right: 0;
+	z-index: 1
 }
+
+// .landing-right {
+//   animation: marquee 5s linear infinite;
+// }
 .animate {
-  height: 30vh;
+  height: 32vh;
 }
 
 .section-top {
@@ -397,7 +441,13 @@ footer {
     h1 {
       font-size: 120px;
     }
-  
+  }
+  .landing-right {
+    right: -64px;
+    top: 50px;
+  }
+  .landing-left {
+    padding-right: unset;
   }
 }
 

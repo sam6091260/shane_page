@@ -111,6 +111,9 @@ nav ul a:hover {
   align-items: center;
   justify-content: center;
   margin-bottom: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .landing h1 {
@@ -124,11 +127,19 @@ nav ul a:hover {
 }
 
 .landing-left {
+  position: relative;
+  z-index: 2;
+  padding-right: 2rem;
+}
+
+.landing-right {
+  position: absolute;
+  right: 0;
   z-index: 1;
 }
 
 .animate {
-  height: 30vh;
+  height: 32vh;
 }
 
 .section-top {
@@ -384,6 +395,13 @@ footer {
   }
   .landing h1 {
     font-size: 120px;
+  }
+  .landing-right {
+    right: -64px;
+    top: 50px;
+  }
+  .landing-left {
+    padding-right: unset;
   }
 }
 @media (max-width: 767px) {
