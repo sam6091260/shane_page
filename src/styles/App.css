@@ -396,6 +396,9 @@ footer {
   .landing h1 {
     font-size: 120px;
   }
+  .landing-right {
+    top: 50px;
+  }
   .landing-left {
     padding-right: unset;
   }
