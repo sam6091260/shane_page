@@ -25,7 +25,7 @@ const SphereWithTexture = () => {
 
 export default function Sphere() {
   return (
-    <div style={{ width: "500px", height: "500px" }}>
+    <div className="sphere">
       <Canvas camera={{ position: [0, 0, 3] }}>
         <ambientLight intensity={1} />
         <directionalLight position={[5, 5, 5]} intensity={2} />

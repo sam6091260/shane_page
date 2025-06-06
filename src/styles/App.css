@@ -81,11 +81,6 @@ nav {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #EA5413;
-  /* position: fixed;
-  width: 80%;
-  left: 50%;
-  top:0;
-  transform: translateX(-50%); */
 }
 
 nav ul {
@@ -387,6 +382,11 @@ footer {
     text-shadow: 0px 0px 5px var(--color), 0px 0px 20px var(--color), 0px 0px 50px var(--color), 5px 5px 15px rgb(0, 0, 0);
   }
 }
+.sphere {
+  width: 500px;
+  height: 500px;
+}
+
 @media (max-width: 1094px) {
   .landing {
     flex-direction: column;
@@ -395,10 +395,6 @@ footer {
   }
   .landing h1 {
     font-size: 120px;
-  }
-  .landing-right {
-    right: -64px;
-    top: 50px;
   }
   .landing-left {
     padding-right: unset;
@@ -412,7 +408,7 @@ footer {
     padding: 0 8px;
   }
   .landing {
-    margin-top: 80px;
+    margin: 80px 0 0 0;
     padding: 12px;
   }
   .landing h1 {
