@@ -69,7 +69,7 @@ function Form({ formRef }) {
     }}
     >
       <img src={logo} alt="loading" />
-      <p style={{ fontWeight:"bold", fontSize: "48px", color: "#F0862B"}}>功能停用中</p>
+      <p style={{ fontWeight:"bold", fontSize: "48px", color: "#F0862B"}}>Banned !</p>
       </div>
       <form
         ref={formRef}
