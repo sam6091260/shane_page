@@ -4,6 +4,7 @@ import axios from "axios";
 import Loading from "./Loading";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import logo from "../assets/shhh-logo.png"
 
 function Form({ formRef }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -58,6 +59,18 @@ function Form({ formRef }) {
 
   return (
     <>
+    <div style={{
+      height: "20%",
+      width: "20%",
+      zIndex: "1000",
+      position:" absolute",
+      left: "50vw",
+      transform: "rotate(45deg)"
+    }}
+    >
+      <img src={logo} alt="loading" />
+      <p style={{ fontWeight:"bold", fontSize: "48px", color: "#F0862B"}}>功能停用中</p>
+      </div>
       <form
         ref={formRef}
         className="form"
