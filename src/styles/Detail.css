@@ -50,6 +50,7 @@
 .post img {
   cursor: zoom-in;
   margin-bottom: 32px;
+  border-radius: 16px;
 }
 
 .postTwo {

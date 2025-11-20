@@ -15,11 +15,15 @@ function DetailPoster() {
 		window.scrollTo(0, 0);
 	}, []);
 
+	const handleBackClick = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
 		<>
 			<div className="container">
 				<div className="back">
-					<Link to="/">
+					<Link to="/" onClick={handleBackClick}>
 						<img src={back} alt="back"></img>
 					</Link>
 				</div>

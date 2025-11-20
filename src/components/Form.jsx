@@ -62,7 +62,7 @@ function Form({ formRef }) {
     <div style={{
       height: "20%",
       width: "20%",
-      zIndex: "1000",
+      zIndex: "3",
       position:" absolute",
       left: "50vw",
       transform: "rotate(45deg)"

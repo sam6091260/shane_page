@@ -5,12 +5,16 @@ import gh from "../assets/icons-github.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <footer>
         <div className="footer-top">
           <div className="logo">
-            <Link to="/">
+            <Link to="/" onClick={handleLogoClick}>
               <img src={logo} alt="logo" className="logo" />
             </Link>
           </div>

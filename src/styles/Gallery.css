@@ -59,6 +59,8 @@
 .gallery-item:hover h3 {
   opacity: 1;
   transform: translateY(0);
+  margin: 8px;
+  border-radius: 8px;
 }
 
 /* .item-info {

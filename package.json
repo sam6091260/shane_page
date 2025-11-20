@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@google/gemini-cli": "^0.1.4",
     "@react-three/drei": "^9.115.0",
     "@react-three/fiber": "^8.18.0",
     "aos": "^2.3.4",
