@@ -45,10 +45,11 @@ function Landing() {
 		};
 	}, []);
 
-	const handleDOM = (position) => {
-		if (window.innerWidth) {
-			window.scrollTo({ top: position, behavior: "smooth" });
-		}
+	const handleDOM = (mobilePosition, desktopPosition) => {
+		// 判斷是否為手機版（螢幕寬度小於 768px）
+		const isMobile = window.innerWidth < 768;
+		const scrollPosition = isMobile ? mobilePosition : desktopPosition;
+		window.scrollTo({ top: scrollPosition, behavior: "smooth" });
 	};
 
 	const images = [
@@ -76,11 +77,11 @@ function Landing() {
 					<div className="marquee-content">
 						{[...Array(3)].map((_, i) => (
 						<React.Fragment key={i}>
-							<p onClick={() => handleDOM(0)}>user Interface Design</p>
-							<p onClick={() => handleDOM(1400)}>graphic Design</p>
-							<p onClick={() => handleDOM(1860)}>logo</p>
-							<p onClick={() => handleDOM(2310)}>brand</p>
-							<p onClick={() => handleDOM(900)}>digital illustration</p>
+							<p onClick={() => handleDOM(0, 0)}>user Interface Design</p>
+							<p onClick={() => handleDOM(500, 1000)}>graphic Design</p>
+							<p onClick={() => handleDOM(1000, 2200)}>logo</p>
+							<p onClick={() => handleDOM(1200, 2600)}>brand</p>
+							<p onClick={() => handleDOM(840, 1700)}>digital illustration</p>
 						</React.Fragment>
 						))}
 					</div>
