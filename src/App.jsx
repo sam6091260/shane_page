@@ -2,6 +2,7 @@ import "./styles/App.css";
 import React, { useEffect, useRef, lazy, Suspense, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Loading from "./components/Loading";
+import CustomCursor from "./components/CustomCursor";
 
 const Work = lazy(() => import("./components/Work"));
 const Nav = lazy(() => import("./components/Nav"));
@@ -90,6 +91,7 @@ function App() {
 	
 	return (
 		<Suspense fallback={<div><Loading /></div>}>
+			<CustomCursor />
 			<Nav 
 				scrollToWork={scrollToWork} 
 				scrollToForm={scrollToForm} 

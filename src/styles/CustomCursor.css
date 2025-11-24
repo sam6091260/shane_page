@@ -1,0 +1,86 @@
+/* 隱藏系統預設鼠標 */
+* {
+  cursor: none !important;
+}
+
+/* 自定義鼠標 */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #F0862B 0%, #EA5413 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(240, 134, 43, 0.6);
+}
+
+/* 在 work 區塊時的橢圓形 */
+.custom-cursor.over-work {
+  width: 80px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #F0862B 0%, #EA5413 100%);
+  box-shadow: 0 0 20px rgba(240, 134, 43, 0.8);
+}
+
+/* 點擊時的效果 */
+.custom-cursor.clicking {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* more 文字樣式 */
+.cursor-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 隱藏鼠標 */
+.custom-cursor.hidden {
+  opacity: 0;
+}
+
+/* 在特定元素上保持無鼠標 */
+input,
+textarea,
+button,
+a,
+select {
+  cursor: none !important;
+}
+
+/* 手機版隱藏自定義鼠標 */
+@media (max-width: 767px) {
+  .custom-cursor {
+    display: none;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  input,
+  textarea,
+  button,
+  a,
+  select {
+    cursor: pointer !important;
+  }
+}
+
