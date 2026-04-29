@@ -1,10 +1,17 @@
+/**
+ * @file Footer.jsx
+ * @description 頁尾組件。包含 LOGO（點擊回頂）、
+ *   社群媒體連結（Instagram、Facebook、GitHub）以及版權聲明。
+ */
 import logo from "../assets/shhh-logo.png";
 import ig from "../assets/icons-ig.png";
 import fb from "../assets/icons-facebook.png";
 import gh from "../assets/icons-github.png";
 import { Link } from "react-router-dom";
 
+/** Footer — 頁尾，不接受任何 props。 */
 function Footer() {
+	/** handleLogoClick — 點擊 LOGO 時平滑滞動至頁面頂部 */
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

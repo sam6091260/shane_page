@@ -1,16 +1,29 @@
+/**
+ * @file Skill.jsx
+ * @description 技能展示區塊。包含：
+ *   - 上方：三個 "ok_hand" 手勢図示，使用 AOS 淡入動畫
+ *   - 下方：可點擊滞動的距马燈文字區（支持滑鼠拖曳）
+ *   滞動區和浮動動畫效果均透過 CSS marquee 動畫實作。
+ */
 import ok from "../assets/ok_hand.png";
 import React, { useEffect, useRef } from "react";
-import AOS from "aos";
-function Landing() {
+/**
+ * Skill — 技能展示區塊，不接受任何 props。
+ *
+ * useEffect 內初始化鼠標拖曳事件，讓滞動區在桶型機上也可水平拖曳瀏覽。
+ */
+function Skill() {
 
 	const scrollRef = useRef(null);
 
 	useEffect(() => {
-		AOS.init();
-
 		const el = scrollRef.current;
 		if (!el) return;
 
+		// --- 鼠標拖曳滞動實作 ---
+		// isDown: 記錄當前是否按下左鍵
+		// startX: 按下時的起始 X 坐標
+		// scrollLeft: 按下時廞動區的初始 scrollLeft 屬性
 		let isDown = false;
 		let startX;
 		let scrollLeft;
@@ -45,6 +58,12 @@ function Landing() {
 		};
 	}, []);
 
+	/**
+	 * handleDOM — 點擊跑马燈項目時滞動到對應區塊
+	 *
+	 * @param {number} mobilePosition  - 手機版的滞動目標（px）
+	 * @param {number} desktopPosition - 桁面版的滞動目標（px）
+	 */
 	const handleDOM = (mobilePosition, desktopPosition) => {
 		// 判斷是否為手機版（螢幕寬度小於 768px）
 		const isMobile = window.innerWidth < 768;
@@ -91,4 +110,4 @@ function Landing() {
 	);
 }
 
-export default Landing;
+export default Skill;

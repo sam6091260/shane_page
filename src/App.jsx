@@ -1,3 +1,12 @@
+/**
+ * @file App.jsx
+ * @description 應用程式主組件。負責：
+ *   1. 定義三條路由：首頁（/）、作品詳情（/detail/:key）、相簿（/gallery）
+ *   2. 管理各區塊的 scroll ref（work、form、landing）
+ *   3. 透過 scroll 事件偵測當前可見區塊（index / work / contact），
+ *      並以 activeSection 狀態同步更新 Nav 的 active 項目
+ *   4. 處理跨頁面的平滑捲動（透過 location.state.scrollTarget）
+ */
 import "./styles/App.css";
 import React, { useEffect, useRef, lazy, Suspense, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -11,10 +20,15 @@ const Landing = lazy(() => import("./components/Landing"));
 const Products = lazy(() => import("./pages/Products"));
 const Form = lazy(() => import("./components/Form"));
 const ToastProvider = lazy(() => import("./components/ToasterProvider"));
-const ZoomInComponent = lazy(() => import("./components/framer/ZoomIn"));
 const Skill = lazy(() => import("./components/Skill"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 
+/**
+ * App — 根組件
+ *
+ * 建立全域 refs 供子組件捲動定位使用，
+ * 並偵聽路由變化與頁面捲動，維護 activeSection 狀態。
+ */
 function App() {
 	const workRef = useRef(null);
 	const formRef = useRef(null);
@@ -109,6 +123,15 @@ function App() {
 	);
 }
 
+/**
+ * AllComponents — 首頁全部區塊的容器
+ *
+ * 依序渲染：Toast 通知 → Landing（英雄區）→ Skill（跑馬燈）→ Work（作品列表）→ Form（聯絡表單）
+ *
+ * @param {React.RefObject} workRef   - 指向 Work 區塊的 ref，供首頁捲動定位使用
+ * @param {React.RefObject} formRef   - 指向 Form 區塊的 ref，供首頁捲動定位使用
+ * @param {React.RefObject} landingRef - 指向 Landing 區塊的 ref（保留供未來使用）
+ */
 function AllComponents({ workRef, formRef, landingRef }) {
 	return (
 		<div>
@@ -116,7 +139,6 @@ function AllComponents({ workRef, formRef, landingRef }) {
 			<div ref={landingRef}>
 				<Landing />
 			</div>
-			{/* <ZoomInComponent /> */}
 			<Skill />
 			<Work workRef={workRef} />
 			<Form formRef={formRef} />

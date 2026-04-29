@@ -6,7 +6,7 @@ import path from "path";
 export default defineConfig({
   base:
     process.env.NODE_ENV === "production"
-      ? "https://sam6091260.github.io/shane_page/"
+      ? "/shane_page/"
       : "/",
   plugins: [react()],
   resolve: {

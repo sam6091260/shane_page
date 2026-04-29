@@ -1,13 +1,13 @@
-import me from "../assets/sss.png";
-import ok from "../assets/ok_hand.png";
-import React, { useEffect } from "react";
-import AOS from "aos";
+/**
+ * @file Landing.jsx
+ * @description 首頁英雄區塊組件。左側顯示職稱標願與名字（霸光動畫效果），
+ *   右側呈現以 Three.js 渲染的可互動 3D 球體。
+ */
+import React from "react";
 import Sphere from "./SphereWithTexture";
 
+/** Landing — 首頁英雄區塊，不接受任何 props。 */
 function Landing() {
-	useEffect(() => {
-		AOS.init();
-	}, []);
 
 	return (
 		<>

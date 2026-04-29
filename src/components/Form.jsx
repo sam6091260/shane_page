@@ -1,11 +1,20 @@
+/**
+ * @file Form.jsx
+ * @description 聯絡表單組件。收集 name、email、message，
+ *   透過 axios POST 將表單資料傳送至 Heroku 郵件中繼服務。
+ *   提交期間顯示 Loading 元件，完成後透過 react-hot-toast 顯示成功或錢誤訊息。
+ */
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import Loading from "./Loading";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import logo from "../assets/shhh-logo.png"
 
+/**
+ * Form — 聯絡表單
+ *
+ * @param {React.RefObject} formRef - 父層傳入的 ref，用於捨動定位
+ */
 function Form({ formRef }) {
   const [isLoading, setIsLoading] = useState(false);
   // 創建 state 來存放表單數據
@@ -15,7 +24,12 @@ function Form({ formRef }) {
     message: "",
   });
 
-  // 更新表單數據的函數
+	/**
+	 * handleChange — 通用表單輸入處理函式。
+	 * 利用 name 屬性動態更新 formData 對應欄位。
+	 *
+	 * @param {React.ChangeEvent} e - 輸入事件
+	 */
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -23,7 +37,13 @@ function Form({ formRef }) {
     });
   };
 
-  // 處理表單提交事件
+	/**
+	 * handleSubmit — 表單提交處理，async/await 模式。
+	 * POST 到 Heroku 郵件 API，成功後清空對象並顯示 toast。
+	 * 不論成功或失敗，finally 區塊均會關閉 Loading 狀態。
+	 *
+	 * @param {React.FormEvent} e - 表單提交事件
+	 */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -53,23 +73,21 @@ function Form({ formRef }) {
     }
   };
 
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
 
   return (
     <>
-    <div style={{
-      height: "20%",
-      width: "20%",
-      zIndex: "3",
-      position:" absolute",
-      left: "50vw",
-      transform: "rotate(45deg)"
-    }}
-    >
-      <img src={logo} alt="loading" />
-      <p style={{ fontWeight:"bold", fontSize: "48px", color: "#F0862B"}}>Banned !</p>
+      <div style={{
+        height: "20%",
+        width: "20%",
+        zIndex: "3",
+        position: " absolute",
+        left: "50vw",
+        transform: "rotate(45deg)"
+      }}
+      >
+        <img src={logo} alt="loading" />
+        <p style={{ fontWeight: "bold", fontSize: "48px", color: "#F0862B" }}>Banned !</p>
       </div>
       <form
         ref={formRef}

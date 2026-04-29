@@ -1,35 +1,54 @@
+/**
+ * @file CustomCursor.jsx
+ * @description 自訂滑鼠游標組件。將系統預設滑標替換為品牌指示式游標。
+ *   特殊行為：
+ *   - 滑鼠拖曳時顯示点擊動畫
+ *   - 尼輪背景至首頁的作品區塊（.work-bottom）時，
+ *     游標擴大並顯示 "more" 文字
+ *   - 路由切換時重置狀態並清除快取 DOM ref
+ */
 import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../styles/CustomCursor.css';
 
+/**
+ * CustomCursor — 自訂滑鼠游標
+ *
+ * 使用 workElementRef 快取 .work-bottom 的 DOM 元素，
+ * 避免在每次 mousemove 事件中反覆呼叫 querySelector（效能優化）。
+ * Lightbox 打開時不顯示 "more" 標記。
+ */
 function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isOverWork, setIsOverWork] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isClicking, setIsClicking] = useState(false);
   const cursorRef = useRef(null);
+  const workElementRef = useRef(null); // 快取 .work-bottom 元素
   const location = useLocation();
 
-  // 當路由改變時重置狀態
+  // 當路由改變時重置狀態，並清除快取的 DOM ref
   useEffect(() => {
     setIsOverWork(false);
+    workElementRef.current = null; // 路由切換後重置快取
   }, [location.pathname]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
 
-      // 檢查是否在 Lightbox 內
-      const isInLightbox = document.querySelector('.yarl__root');
-      
-      // 如果在 Lightbox 內，不顯示 more
-      if (isInLightbox) {
+      // 檢查是否在 Lightbox 內（Lightbox 出現頻率低，保留即時查詢）
+      if (document.querySelector('.yarl__root')) {
         setIsOverWork(false);
         return;
       }
 
-      // 檢查鼠標是否在 work 區塊上
-      const workElement = document.querySelector('.work-bottom');
+      // 使用快取的 ref — 避免每次 mousemove 都呼叫 querySelector
+      if (!workElementRef.current) {
+        workElementRef.current = document.querySelector('.work-bottom');
+      }
+
+      const workElement = workElementRef.current;
       if (workElement) {
         const rect = workElement.getBoundingClientRect();
         const isInWork = (
@@ -40,7 +59,6 @@ function CustomCursor() {
         );
         setIsOverWork(isInWork);
       } else {
-        // 如果找不到 work-bottom 元素，設為 false
         setIsOverWork(false);
       }
     };

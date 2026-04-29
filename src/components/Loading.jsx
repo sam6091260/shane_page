@@ -1,7 +1,12 @@
+/**
+ * @file Loading.jsx
+ * @description 全屏載入中狀態組件。在頁面正在 lazy load 時，
+ *   展示居中的 LOGO 圖示作為載入指示器。
+ */
 import React from "react";
-import { Loader2 } from "lucide-react";
 import logo from "../assets/shhh-logo.png"
 
+/** Loading — 全屏載入中狀態，不接受任何 props。 */
 const Loading = () => {
   return (
     <div className="loading-spinner" style={{ 
