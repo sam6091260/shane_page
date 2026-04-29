@@ -1,2 +1,14 @@
+# 依賴套件
 node_modules
+
+# 環境變數
 .env
+.env.local
+.env.production
+
+# 自動生成的 SCSS source maps
+**/*.css.map
+
+# 編輯器 / 系統檔案
+.DS_Store
+Thumbs.db
